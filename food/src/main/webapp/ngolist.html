@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color:darkgreen ;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .ngo-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .ngo-card:hover {
+            transform: scale(1.05);
+        }
+
+        .ngo-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .ngo-card h3, .ngo-card p {
+            padding: 15px;
+            margin: 0;
+        }
+
+        .Inform-btn{
+            background-color:darkgreen;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        #homeButton{
+            background-color:darkgreen;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        
+        
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NGO   List</h1>
+    </header>
+
+    <section id="ngoList">
+        <div class="ngo-card" onclick="openModal('Gaurav Sharma NGO', 'sucessfully informed' )">
+            <img src="./img/g ngo.jpg" alt="NGO 1">
+            <h3>Gaurav Sharma</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn" onclick="showRegistrationSuccess()">Inform</button>
+            
+
+
+        
+        </div>
+
+        <div class="ngo-card" onclick="openModal('Saloni NGO', 'sucessfully informed' )">
+            <img src="./img/4.jpg" alt="NGO 2">
+            <h3>Saloni NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn" onclick="showRegistrationSuccess()">Inform</button>
+            
+
+        </div>
+        <div class="ngo-card" onclick="openModal('Shivani NGO', 'sucessfully informed')">
+            <img src="./img/g ngo.jpg" alt="NGO 2">
+            <h3>Shivani NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal(' Neelam NGO ', 'sucessfully informed')">
+            <img src="./img/3.jpg" alt="NGO 2">
+            <h3> Neelam NGO </h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal(' Niharika NGO ', 'sucessfully informed.')">
+            <img src="./img/5.jpg" alt="NGO 2">
+            <h3> Niharika NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Sohini Verma NGO', 'sucessfully informed.')">
+            <img src="./img/6.jpg" alt="NGO 2">
+            <h3>Sohini Verma NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Himalaya NGO', 'sucessfully informed')">
+            <img src="./img/9.jpg" alt="NGO 2">
+            <h3>Himalaya NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Nancy Gara NGO', 'sucessfully informed.')">
+            <img src="./img/8.jpg" alt="NGO 2">
+            <h3>Nancy Gara NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Priyanshi NGO', 'sucessfully informed.')">
+            <img src="./img/10.jpg" alt="NGO 2">
+            <h3>Priyanshi NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+       
+        <div class="ngo-card" onclick="openModal('vishal hotel', 'sucessfully informed..')">
+            <img src="./img/11.jpg" alt="NGO 2">
+            <h3>vishal NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Diya NGO', 'sucessfully informed..')">
+            <img src="./img/12.jpg" alt="NGO 2">
+            <h3>Diya NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="ngo-card" onclick="openModal('Samanjeet NGO', 'sucessfully informed..')">
+            <img src="./img/13.jpg" alt="NGO 2">
+            <h3>Samanjeet NGO</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+
+        
+
+    </section>
+
+     <div id="ngoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <button id="homeButton" onclick="redirectToHome()">Go to Home</button>
+        </div>
+    </div> 
+
+    
+
+    <script>
+        function openModal(name, description) {
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('ngoModal').style.display = 'flex';
+        }
+    
+        function closeModal() {
+            document.getElementById('ngoModal').style.display = 'none';
+        }
+    
+        function showRegistrationSuccess() {
+            document.getElementById('registrationSuccess').style.display = 'block';
+        }
+    
+        function redirectToHome() {
+            // Replace 'your-home-page-url' with the actual URL of your home page
+            window.location.href = 'Index.html';
+        }
+    </script>
+    
+
+</body>
+</html>

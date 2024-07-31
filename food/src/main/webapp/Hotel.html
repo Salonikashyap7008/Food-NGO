@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color:darkgreen ;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .hotel-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.05);
+        }
+
+        .hotel-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .hotel-card h3, .hotel-card p {
+            padding: 15px;
+            margin: 0;
+        }
+
+        .Inform-btn{
+            background-color:darkgreen;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        #homeButton{
+            background-color:darkgreen;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        
+        
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hotel  List</h1>
+    </header>
+
+    <section id="hotelList">
+        
+
+        <div class="hotel-card" onclick="openModal('Saloni Hotel', 'sucessfully informed' )">
+            <img src="./img/hotels/saloni1.jpg" alt="hotel 2">
+            <h3>Saloni Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn" onclick="showRegistrationSuccess()">Inform</button>
+            
+
+        </div>
+        <div class="hotel-card" onclick="openModal('Gaurav Sharma Hotel', 'sucessfully informed' )">
+            <img src="./img/hotels/gaurav.jpg" alt="Hotel 1">
+            <h3>Gaurav Sharma Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn" onclick="showRegistrationSuccess()">Inform</button>
+            
+		</div>
+        <div class="hotel-card" onclick="openModal('ShivaniHotel', 'sucessfully informed')">
+            <img src="./img/hotels/shivanihotel.jpg" alt="hotel 2">
+            <h3>Shivani Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal(' Neelam Hotel ', 'sucessfully informed')">
+            <img src="./img/hotels/neelamhotel.png" alt="hotel 2">
+            <h3> Neelam Hotel </h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal(' Niharika Hotel ', 'sucessfully informed.')">
+            <img src="./img/hotels/hotel4.jpeg" alt="hotel 2">
+            <h3> Niharika Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Sohini Verma Hotel', 'sucessfully informed.')">
+            <img src="./img/hotels/sohini hotel.jpeg" alt="hotel 2">
+            <h3>Sohini Verma Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Himalaya Hotel', 'sucessfully informed')">
+            <img src="./img/hotels/hotel2.jpeg" alt="hotel 2">
+            <h3>Himalaya Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Nancy Gara Hotel', 'sucessfully informed.')">
+            <img src="./img/hotels/h7.jpg" alt="hotel 2">
+            <h3>Nancy Gara Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Priyanshi Hotel', 'sucessfully informed.')">
+            <img src="./img/hotels/priyanshihotel.jpg" alt="hotel2">
+            <h3>Priyanshi Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+       
+        <div class="hotel-card" onclick="openModal('vishal Hotel', 'sucessfully informed..')">
+            <img src="./img/hotels/vishalhotel.jpg" alt="hotel2">
+            <h3>vishal Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Diya Hotel', 'sucessfully informed..')">
+            <img src="./img/hotels/hotel 1.jpeg" alt="hotel 2">
+            <h3>Diya Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+        <div class="hotel-card" onclick="openModal('Samanjeet Hotel', 'sucessfully informed..')">
+            <img src="./img/hotels/samanjeethotel.jpg" alt="hotel 2">
+            <h3>Samanjeet Hotel</h3>
+            <p>Donate Food</p>
+            <button class="Inform-btn">Inform</button>
+        </div>
+
+        
+
+    </section>
+
+     <div id="hotelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <button id="homeButton" onclick="redirectToHome()">Go to Home</button>
+        </div>
+    </div> 
+
+    
+
+    <script>
+        function openModal(name, description) {
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('hotelModal').style.display = 'flex';
+        }
+    
+        function closeModal() {
+            document.getElementById('hotelModal').style.display = 'none';
+        }
+    
+        function showRegistrationSuccess() {
+            document.getElementById('registrationSuccess').style.display = 'block';
+        }
+    
+        function redirectToHome() {
+           
+            window.location.href = 'Index.html';
+        }
+    </script>
+    
+
+</body>
+</html>

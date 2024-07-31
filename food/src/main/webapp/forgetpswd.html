@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forget password</title>
+</head>
+<body>
+<div>
+        <h2>Forget Password</h2>
+        <p>Enter your email address to reset your password.</p>
+
+        <!-- Forget Password Form -->
+        <form  action="forgetpassword" method="post" id="forgetPasswordForm">
+            <label >Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label > recovery_token:</label>
+            <input type="email" id="email" name=" recovery_token" required>
+            
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <!-- Display messages or errors -->
+        <div id="message"></div>
+
+        <!-- Add your scripts or link to external scripts here -->
+        <script>
+            function submitForm() {
+                // Fetch the entered email
+                var email = document.getElementById('email').value;
+
+                
+                // Display a success or error message to the user
+                var messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = "A password recovery email has been sent to " + email + ".";
+            }
+        </script>
+    </div>
+</body>
+
+
+
+</body>
+</html>
